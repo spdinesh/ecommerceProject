@@ -12,7 +12,7 @@ if( $_SERVER['REQUEST_METHOD']=='POST'){
         $r1 = mysqli_fetch_array($r);        
         session_start();
         $_SESSION['login'] = 'true';        
-        header("Location: home.html");
+        header("Location: home.php");
         exit;        
     }        
     else{
