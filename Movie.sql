@@ -1,13 +1,31 @@
+create database project;
 
 use project;
-create table movie(movieid int auto_increment not null,
-moviename varchar(50), moviegenre varchar(50),
-moviecast varchar(100), price decimal(6,2), 
-quantity int default 0, primary key(movieid));
 
-insert into movie values(null, "The Shawshank Redemption", "Drama", "Tim Robbins, Morgan Freeman, Bob Gunton", "20.00", "0");
-insert into movie values(null, "The Godfather", "Crime,Drama", "Marlon Brando, Al Pacino, James Caan", "15.00", "0");
-insert into movie values(null, "Pulp fiction", "Crime,Drama", "John Travolta, Uma Thurman, Samuel L. Jackson", "10.00", "0");
-insert into movie values(null, "Parasite", "Comedy,Drama", "Kang-ho Song, Lee Sun-kyun, Yeo-jeong Cho", "17.00", "0");
-insert into movie values(null, "Django Unchained", "Drama,Western", "Jamie Foxx, Christoph Waltz, Leonardo DiCaprio", "12.00", "0");
-insert into movie values(null, "WALL·E", " Animation, Adventure, Family", "Ben Burtt, Elissa Knight, Jeff Garlin", "16.00", "0");
+create table if not exists login
+(loginid int auto_increment not null,
+username varchar(50), password varchar(50), 
+primary key(loginid));
+
+insert into login values(null, "user1", "123");
+
+select * from login;
+create table IF NOT EXISTS movielist (  
+  `id` int(11) auto_increment not null,  
+  `name` varchar(255) not null,  
+  `image` varchar(255) not null,  
+  `price` double(10,2) not null,  
+  PRIMARY KEY (`id`)
+ );
+ 
+
+insert into movielist (id, name, image, price) VALUES  
+(1, 'Pulpfiction', 'https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR1,0,182,268_AL_.jpg', 10.00),  
+(2, 'Seven', 'https://m.media-amazon.com/images/M/MV5BOTUwODM5MTctZjczMi00OTk4LTg3NWUtNmVhMTAzNTNjYjcyXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL_.jpg', 25.00),  
+(3, 'The God father', 'https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg', 12.00);
+ 
+ insert into movielist (id, name, image, price) VALUES  
+ (4, 'The Dark Knight', 'https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX182_CR0,0,182,268_AL_.jpg', 10.00),  
+ (5, 'Inception', 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_UX182_CR0,0,182,268_AL_.jpg', 20.00),  
+ (6, 'The Matrix', 'https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL_.jpg', 15.00);
+ 
